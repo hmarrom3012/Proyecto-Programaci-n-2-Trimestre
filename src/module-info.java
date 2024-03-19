@@ -4,5 +4,5 @@
 /**
  * 
  */
-module Proyecto_2Trim {
+module ProyectoProgramacion {
 }
