@@ -12,8 +12,9 @@ public class Profesor extends Usuario {
 		super();
 	}
 
-	public Profesor(String nombre, String contraseña, String curso) {
+	public Profesor(String nombre, String contraseña, String curso, String admin) {
 		super(nombre, contraseña, curso);
+		setAdministrador(admin);
 	}
 
 	public Administrador getAdministrador() {
