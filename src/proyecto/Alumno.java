@@ -2,6 +2,7 @@ package proyecto;
 
 public class Alumno extends Usuario {
 	private Examen[] examenesRealizados;
+	private int contadorExamenes;
 
 	public Alumno() {
 		super();
@@ -15,8 +16,9 @@ public class Alumno extends Usuario {
 		return examenesRealizados;
 	}
 
-	public void setExamenesRealizados(Examen[] examenesRealizados) {
-		this.examenesRealizados = examenesRealizados;
+	public void setExamenesRealizados(Examen examenesRealizados) {
+		this.examenesRealizados[this.contadorExamenes] = examenesRealizados;
+		contadorExamenes++;
 	}
 
 	@Override

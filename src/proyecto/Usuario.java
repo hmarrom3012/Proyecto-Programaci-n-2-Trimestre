@@ -5,7 +5,7 @@ public abstract class Usuario {
 	protected String nombre;
 	protected String contraseña;
 	protected String curso;
-	private static int contadorUsuarios;
+	private static int contadorUsuarios = 1;
 
 	public Usuario() {
 		this.id = contadorUsuarios;

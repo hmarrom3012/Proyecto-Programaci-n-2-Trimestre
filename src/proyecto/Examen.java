@@ -1,26 +1,39 @@
 package proyecto;
 
 public class Examen {
+	private int id;
 	private int tema;
-	private Modulo modulo;
-	private Tipo tipo;
+	private String modulo;
 	private String[] preguntas;
 	private String[] respuestas;
+	private String[] preguntasContestadas;
 	private int nota;
+	private static int contadorExamenes = 1;
 
 	enum Tipo {
 		TEST, TEORICO
 	}
 
 	public Examen() {
+		this.id = contadorExamenes;
+		contadorExamenes++;
 	}
 
-	public Examen(int tema, Modulo modulo, Tipo tipo, String[] preguntas, String[] respuestas) {
+	public Examen(int tema, String modulo, String[] preguntas, String[] respuestas) {
+		this.id = contadorExamenes;
 		this.tema = tema;
 		this.modulo = modulo;
-		this.tipo = tipo;
 		this.preguntas = preguntas;
 		this.respuestas = respuestas;
+		contadorExamenes++;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getTema() {
@@ -31,20 +44,12 @@ public class Examen {
 		this.tema = tema;
 	}
 
-	public Modulo getModulo() {
+	public String getModulo() {
 		return modulo;
 	}
 
-	public void setModulo(Modulo modulo) {
+	public void setModulo(String modulo) {
 		this.modulo = modulo;
-	}
-
-	public Tipo getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(Tipo tipo) {
-		this.tipo = tipo;
 	}
 
 	public String[] getPreguntas() {
@@ -63,6 +68,14 @@ public class Examen {
 		this.respuestas = respuestas;
 	}
 
+	public String[] getPreguntasContestadas() {
+		return preguntasContestadas;
+	}
+
+	public void setPreguntasContestadas(String[] preguntasContestadas) {
+		this.preguntasContestadas = preguntasContestadas;
+	}
+
 	public int getNota() {
 		return nota;
 	}
@@ -71,17 +84,26 @@ public class Examen {
 		this.nota = nota;
 	}
 
+	public int corregir() {
+		int nota = 0;
+		for (int i = 0; i < this.preguntas.length; i++) {
+			if (this.respuestas[i].equalsIgnoreCase(this.preguntasContestadas[i])) {
+				nota++;
+			}
+		}
+		
+		return nota;
+	}
+
 	@Override
 	public String toString() {
 		String cadena = "\n------------------------------------------";
 		cadena += "\nTema: " + this.tema;
 		cadena += "\nMódulo: " + this.modulo;
-		cadena += "\nTipo: " + this.tipo;
 		cadena += "\nPreguntas: " + this.preguntas;
 		cadena += "\nRespuestas: " + this.respuestas;
 		cadena += "\nNota: " + this.nota;
 		cadena += "\n------------------------------------------";
 		return cadena;
 	}
-
 }
