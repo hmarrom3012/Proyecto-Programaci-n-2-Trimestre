@@ -6,12 +6,15 @@ public class Profesor extends Usuario {
 	}
 
 	private Administrador administrador;
-	private Examen[] examenesCreados;
 
 	public Profesor() {
 		super();
 	}
 
+	public Profesor(String nombre, String contraseña, String curso) {
+		super(nombre, contraseña, curso);
+	}
+	
 	public Profesor(String nombre, String contraseña, String curso, String admin) {
 		super(nombre, contraseña, curso);
 		setAdministrador(admin);
@@ -22,21 +25,13 @@ public class Profesor extends Usuario {
 	}
 
 	public void setAdministrador(String admin) {
-		if (admin == "SI" || admin == "si" || admin == "s") {
+		if (admin.equalsIgnoreCase("SI")) {
 			this.administrador = Administrador.SI;
 			System.out.println("Profesor creado como administrador.");
 		} else {
 			this.administrador = Administrador.NO;
 			System.out.println("Profesor creado como usuario.");
 		}
-	}
-
-	public Examen[] getExamenesCreados() {
-		return examenesCreados;
-	}
-
-	public void setExamenesCreados(Examen[] examenesCreados) {
-		this.examenesCreados = examenesCreados;
 	}
 
 	@Override
@@ -47,7 +42,6 @@ public class Profesor extends Usuario {
 		cadena += "\nContraseña: " + this.contraseña;
 		cadena += "\nAdministrador: " + this.administrador;
 		cadena += "\nCurso: " + this.curso;
-		cadena += "\nExámenes creados: " + this.examenesCreados;
 		cadena += "\n------------------------------------------";
 		return cadena;
 	}

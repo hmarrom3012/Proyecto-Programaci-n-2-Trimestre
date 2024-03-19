@@ -6,3 +6,4 @@
 - Creación de las clases Examen y Modulo.
 - Creación de la clase App.
 - Clase App terminada.
+- Métodos movidos a sus clases.
