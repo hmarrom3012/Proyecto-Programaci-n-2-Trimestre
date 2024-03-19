@@ -1,10 +1,7 @@
 package proyecto;
 
 import java.util.Scanner;
-<<<<<<< HEAD
 import proyecto.Profesor.Administrador;
-=======
->>>>>>> 7d42be4afc533b1463bd7d4ce358aa081360d534
 
 public class App {
 
@@ -12,7 +9,6 @@ public class App {
 		Scanner sc = new Scanner(System.in);
 
 		Usuario[] usuarios = new Usuario[100];
-<<<<<<< HEAD
 		Examen[] examenes = new Examen[100];
 		Usuario usuarioActual = null;
 
@@ -25,37 +21,23 @@ public class App {
 				System.out.println("3. Importar datos.");
 				System.out.println("4. Salir.");
 				System.out.println("Elige una opción (1-4).");
-=======
-		usuarios[0] = new Profesor("Pepe", "Pepe", "1º DAM", "no");
-		Usuario usuarioActual = null;
-
-		boolean salida = false;
-		
-		while (!salida) {
-			while (!salida) {
-				System.out.println("1. Iniciar sesión.");
-				System.out.println("2. Crear usuario.");
-				System.out.println("3. Salir.");
-				System.out.println("Elige una opción (1-3).");
->>>>>>> 7d42be4afc533b1463bd7d4ce358aa081360d534
 				int opcion = sc.nextInt();
 
 				switch (opcion) {
 				case 1:
 					usuarioActual = iniciarSesion(usuarios);
-					salida = true;
+					if (usuarioActual != null) {
+						salida = true;
+					}
 					break;
 				case 2:
 					usuarios = crearUsuario(usuarios);
 					break;
 				case 3:
-<<<<<<< HEAD
 					usuarios = importarUsuarios(usuarios);
 					examenes = importarExamenes(examenes);
 					break;
 				case 4:
-=======
->>>>>>> 7d42be4afc533b1463bd7d4ce358aa081360d534
 					salida = true;
 					break;
 				default:
@@ -63,79 +45,75 @@ public class App {
 					break;
 				}
 			}
-<<<<<<< HEAD
+			
+			if (usuarioActual != null) {
+				salida = false;
 
-			salida = false;
+				while (!salida) {
+					System.out.println("1. Listar usuario actual.");
+					System.out.println("2. Listar usuarios.");
+					System.out.println("3. Crear usuario.");
+					System.out.println("4. Modificar usuario.");
+					System.out.println("5. Borrar usuario.");
+					System.out.println("6. Crear examen.");
+					System.out.println("7. Participar en un examen.");
+					System.out.println("8. Ver nota de un examen.");
+					System.out.println("9. Ver nota de todos los exámenes.");
+					System.out.println("10. Salir.");
+					System.out.println("Elige una opción (1-10).");
+					int opcion = sc.nextInt();
 
-			while (!salida) {
-				System.out.println("1. Listar usuario actual.");
-				System.out.println("2. Listar usuarios.");
-				System.out.println("3. Crear usuario.");
-				System.out.println("4. Modificar usuario.");
-				System.out.println("5. Borrar usuario.");
-				System.out.println("6. Crear examen.");
-				System.out.println("7. Participar en un examen.");
-				System.out.println("8. Ver nota de un examen.");
-				System.out.println("9. Ver nota de todos los exámenes.");
-				System.out.println("10. Salir.");
-				System.out.println("Elige una opción (1-10).");
-				int opcion = sc.nextInt();
-
-				switch (opcion) {
-				case 1:
-					System.out.println(usuarioActual);
-					break;
-				case 2:
-					listarUsuario(usuarios);
-					break;
-				case 3:
-					usuarios = crearUsuario(usuarios);
-					break;
-				case 4:
-					usuarios = modificarUsuario(usuarios);
-					break;
-				case 5:
-					usuarios = eliminarUsuario(usuarios);
-					break;
-				case 6:
-					examenes = crearExamen(examenes);
-					break;
-				case 7:
-					if (usuarioActual instanceof Alumno) {
-						usuarioActual = participarExamen(examenes, usuarios, usuarioActual);
-					} else {
-						System.out.println("No eres un alumno.");
+					switch (opcion) {
+					case 1:
+						System.out.println(usuarioActual);
+						break;
+					case 2:
+						listarUsuario(usuarios);
+						break;
+					case 3:
+						usuarios = crearUsuario(usuarios);
+						break;
+					case 4:
+						usuarios = modificarUsuario(usuarios);
+						break;
+					case 5:
+						usuarios = eliminarUsuario(usuarios);
+						break;
+					case 6:
+						examenes = crearExamen(examenes);
+						break;
+					case 7:
+						if (usuarioActual instanceof Alumno) {
+							usuarioActual = participarExamen(examenes, usuarios, usuarioActual);
+						} else {
+							System.out.println("No eres un alumno.");
+						}
+						break;
+					case 8:
+						if (usuarioActual instanceof Alumno) {
+							verNota((Alumno) usuarioActual, 1);
+						} else {
+							System.out.println("No eres un alumno.");
+						}
+						break;
+					case 9:
+						if (usuarioActual instanceof Alumno) {
+							verNota((Alumno) usuarioActual, 2);
+						} else {
+							System.out.println("No eres un alumno.");
+						}
+						break;
+					case 10:
+						salida = true;
+						break;
+					default:
+						System.out.println("Elige una opción válida.");
+						break;
 					}
-					break;
-				case 8:
-					if (usuarioActual instanceof Alumno) {
-						verNota((Alumno) usuarioActual, 1);
-					} else {
-						System.out.println("No eres un alumno.");
-					}
-					break;
-				case 9:
-					if (usuarioActual instanceof Alumno) {
-						verNota((Alumno) usuarioActual, 2);
-					} else {
-						System.out.println("No eres un alumno.");
-					}
-					break;
-				case 10:
-					salida = true;
-					break;
-				default:
-					System.out.println("Elige una opción válida.");
-					break;
 				}
 			}
 
 		} while (!salida);
-=======
-			
-		}
-		System.out.println(usuarioActual);
->>>>>>> 7d42be4afc533b1463bd7d4ce358aa081360d534
 		sc.close();
 	}
 
@@ -147,32 +125,19 @@ public class App {
 		while (!salida) {
 			System.out.print("Nombre de usuario: ");
 			String nombreUsuario = sc.next();
-<<<<<<< HEAD
 
 			usuarioActual = pedirContraseña(usuarios, nombreUsuario);
 
 			salida = true;
 		}
 
-=======
-			
-			usuarioActual = pedirContraseña(usuarios, nombreUsuario);
-			
-			salida = true;
-		}
-		
->>>>>>> 7d42be4afc533b1463bd7d4ce358aa081360d534
 		return usuarioActual;
 	}
 
 	private static Usuario pedirContraseña(Usuario[] usuarios, String nombreUsuario) {
 		Scanner sc = new Scanner(System.in);
 		Usuario usuarioActual = null;
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> 7d42be4afc533b1463bd7d4ce358aa081360d534
 		for (Usuario usuario : usuarios) {
 			if (compruebaUsuario(usuario, nombreUsuario)) {
 				System.out.print("Contraseña: ");
@@ -189,13 +154,12 @@ public class App {
 						}
 					}
 				}
+			} else {
+				System.out.println("Nombre de usuario incorrecto.");
+				return null;
 			}
 		}
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> 7d42be4afc533b1463bd7d4ce358aa081360d534
 		return usuarioActual;
 	}
 
@@ -205,11 +169,7 @@ public class App {
 		}
 		return false;
 	}
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> 7d42be4afc533b1463bd7d4ce358aa081360d534
 	private static boolean compruebaContraseña(Usuario usuario, String contraseña) {
 		if (usuario != null && usuario.getContraseña().equals(contraseña)) {
 			return true;
@@ -217,7 +177,6 @@ public class App {
 		return false;
 	}
 
-<<<<<<< HEAD
 	private static void listarUsuario(Usuario[] usuarios) {
 		for (Usuario usuario : usuarios) {
 			if (usuario != null) {
@@ -520,52 +479,4 @@ public class App {
 	public static final String RED = "\u001B[31m";
 	public static final String GREEN = "\u001B[32m";
 	public static final String BLUE = "\u001B[34m";
-=======
-	private static Usuario[] crearUsuario(Usuario[] usuarios) {
-		Scanner sc = new Scanner(System.in);
-		boolean salida = false;
-		
-		while (!salida) {
-			System.out.println("¿Quieres crear un alumno (1) o un profesor (2)?");
-			int opcion = sc.nextInt();
-
-			System.out.println("Escribe el nombre de usuario.");
-			String nombre = sc.next();
-			
-			System.out.println("Escribe la contraseña.");
-			String contraseña = sc.next();
-			
-			System.out.println("Escribe el curso.");
-			String curso = sc.next();
-			
-			switch (opcion) {
-			case 2:
-				System.out.println("¿Es administrador?");
-				String administrador = sc.next();
-				
-				for (int i = 0; i < usuarios.length; i++) {
-					if (usuarios[i] == null) {
-						usuarios[i] = new Profesor(nombre, contraseña, curso, administrador);
-						return usuarios;
-					}
-				}
-				break;
-			default:
-				
-				for (int i = 0; i < usuarios.length; i++) {
-					if (usuarios[i] == null) {
-						usuarios[i] = new Alumno(nombre, contraseña, curso);
-						return usuarios;
-					}
-				}
-				break;
-			}
-			salida = true;
-		}
-		return usuarios;
-	}
-
-	
-	
->>>>>>> 7d42be4afc533b1463bd7d4ce358aa081360d534
 }
