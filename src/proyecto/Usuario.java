@@ -127,7 +127,7 @@ public abstract class Usuario {
 	}
 
 	/**
-	 * Método para crear un usuario.
+	 * Método abstracto para crear un usuario.
 	 * 
 	 * @param usuarios Array de usuarios.
 	 * @return Array de usuarios actualizado.
@@ -177,7 +177,7 @@ public abstract class Usuario {
 	}
 
 	/**
-	 * Método para modificar un usuario.
+	 * Método abstracto para modificar un usuario.
 	 * 
 	 * @param usuarios Array de usuarios.
 	 * @return Array de usuarios actualizado.
@@ -241,7 +241,7 @@ public abstract class Usuario {
 	}
 
 	/**
-	 * Método para eliminar un usuario.
+	 * Método abstracto para eliminar un usuario.
 	 * 
 	 * @param usuarios      Array de usuarios.
 	 * @param usuarioActual Usuario actual.
@@ -288,7 +288,7 @@ public abstract class Usuario {
 	}
 
 	/**
-	 * Método para listar usuarios.
+	 * Método abstracto para listar usuarios.
 	 * 
 	 * @param usuarios Array de usuarios.
 	 */
