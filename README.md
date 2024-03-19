@@ -7,3 +7,4 @@
 - Creación de la clase App.
 - Clase App terminada.
 - Métodos movidos a sus clases.
+- Manejo de excepciones realizado.
