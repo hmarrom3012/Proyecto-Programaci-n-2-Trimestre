@@ -240,8 +240,11 @@ public class Examen {
 				}
 
 				for (int i = 0; i < examenes.length; i++) {
-					examenes[i] = new Examen(tema, modulo, preguntas, respuestas, usuarioActual);
-					salir2 = true;
+					if (examenes[i] == null) {
+						examenes[i] = new Examen(tema, modulo, preguntas, respuestas, usuarioActual);
+						salir2 = true;
+						i = examenes.length;
+					}
 				}
 			}
 		} catch (Exception e) {
