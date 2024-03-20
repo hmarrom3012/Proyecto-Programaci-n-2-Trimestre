@@ -272,6 +272,7 @@ public class Examen {
 	@Override
 	public String toString() {
 		String cadena = "\n------------------------------------------";
+		cadena += "\nID: " + this.id;
 		cadena += "\nTema: " + this.tema;
 		cadena += "\nMódulo: " + this.modulo;
 		cadena += "\nProfesor: " + this.profesor;
