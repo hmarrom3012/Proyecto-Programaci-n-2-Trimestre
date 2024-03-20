@@ -220,9 +220,11 @@ public class Examen {
 		try {
 			System.out.println("Escribe el módulo.");
 			String modulo = sc.next();
+			sc.nextLine();
 
 			System.out.println("Escribe el tema.");
 			int tema = sc.nextInt();
+			sc.nextLine();
 
 			String[] preguntas = new String[5];
 			String[] respuestas = new String[5];
@@ -231,10 +233,10 @@ public class Examen {
 			while (!salir2) {
 				for (int i = 0; i < 5; i++) {
 					System.out.println("Escribe la pregunta.");
-					preguntas[i] = sc.next();
+					preguntas[i] = sc.nextLine();
 
 					System.out.println("Escribe la respuesta.");
-					respuestas[i] = sc.next();
+					respuestas[i] = sc.nextLine();
 				}
 
 				for (int i = 0; i < examenes.length; i++) {

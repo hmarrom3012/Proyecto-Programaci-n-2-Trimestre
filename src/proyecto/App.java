@@ -229,16 +229,16 @@ public class App {
      */
     private static Usuario[] importarUsuarios(Usuario[] usuarios) {
         // Datos generados con Chat GPT
-        usuarios[91] = new Profesor("David_Garcia", "davgar", "1º DAM", "si");
-        usuarios[92] = new Profesor("Ana_Martinez", "anamar", "2º DAW", "si");
-        usuarios[93] = new Profesor("Laura_Sanchez", "lausan", "1º DAW", "no");
-        usuarios[94] = new Profesor("Juan_Perez", "juaper", "2º DAM", "no");
-        usuarios[95] = new Profesor("Alejandro_Lopez", "alelop", "1º DAM", "no");
-        usuarios[96] = new Alumno("Andres_Martinez", "andmar", "1º DAM");
-        usuarios[97] = new Alumno("Sofia_Garcia", "sofgar", "2º DAW");
-        usuarios[98] = new Alumno("Javier_Lopez", "javlop", "1º DAW");
-        usuarios[99] = new Alumno("Valentina_Rodriguez", "valrod", "2º DAM");
-        usuarios[100] = new Alumno("Daniel_Gonzalez", "dangon", "1º DAM");
+        usuarios[90] = new Profesor("David_Garcia", "davgar", "1º DAM", "si");
+        usuarios[91] = new Profesor("Ana_Martinez", "anamar", "2º DAW", "si");
+        usuarios[92] = new Profesor("Laura_Sanchez", "lausan", "1º DAW", "no");
+        usuarios[93] = new Profesor("Juan_Perez", "juaper", "2º DAM", "no");
+        usuarios[94] = new Profesor("Alejandro_Lopez", "alelop", "1º DAM", "no");
+        usuarios[95] = new Alumno("Andres_Martinez", "andmar", "1º DAM");
+        usuarios[96] = new Alumno("Sofia_Garcia", "sofgar", "2º DAW");
+        usuarios[97] = new Alumno("Javier_Lopez", "javlop", "1º DAW");
+        usuarios[98] = new Alumno("Valentina_Rodriguez", "valrod", "2º DAM");
+        usuarios[99] = new Alumno("Daniel_Gonzalez", "dangon", "1º DAM");
         return usuarios;
     }
 
