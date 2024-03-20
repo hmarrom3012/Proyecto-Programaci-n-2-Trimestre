@@ -56,6 +56,7 @@ public class Alumno extends Usuario {
 		for (int i = 0; i < examenesRealizados.length; i++) {
 			if (examenesRealizados[i] == null) {
 				examenesRealizados[i] = examenRealizado;
+				i = examenesRealizados.length;
 			}
 		}
 	}
@@ -134,7 +135,9 @@ public class Alumno extends Usuario {
 				case 2:
 					for (Examen examen : examenesRealizados) {
 						if (examen != null) {
-							System.out.println(examen.getNota());
+							System.out.println(examen.toString());
+							System.out.println("Tu nota es " + examen.getNota() + " sobre "
+									+ examen.getPreguntasContestadas().length + ".");
 						}
 					}
 					break;
